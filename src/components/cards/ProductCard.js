@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart";
 import {MDBBtn} from 'mdb-react-ui-kit';
+import {ShoppingCartOutlined} from "@ant-design/icons";
 const  ProductCard=({ p })=> {
   // context
   const [cart, setCart] = useCart();
@@ -42,7 +43,7 @@ const  ProductCard=({ p })=> {
         <p className="card-text">{p?.description?.substring(0, 60)}...</p>
       </div>
 
-      <div className="d-flex justify-content-between">
+        <div className="btn-wrapper text-center">
         <MDBBtn
           className="btn btn-primary col card-button cart-button"
           color='success'
@@ -60,7 +61,7 @@ const  ProductCard=({ p })=> {
             toast.success("Added to cart");
           }}
         >
-          Add to Cart
+            <ShoppingCartOutlined /> Add to Cart
         </MDBBtn>
       </div>
     </div>
